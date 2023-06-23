@@ -10,9 +10,7 @@ let maxWealth = 0
         for (let j = 0; j < accounts[i].length; j++) {
              wealth += accounts[i][j];
         }
-        if (wealth > maxWealth) {
-            maxWealth = wealth
-        }
+     maxWealth = Math.max(maxWealth, wealth) 
    }  
    return maxWealth
 };
