@@ -3,19 +3,18 @@
  * @param {number[][]} accounts
  * @return {number}
  */
-var maximumWealth = function(accounts) {
-    let tempArr = []
+function maximumWealth (accounts) {
+let maxWealth = 0
    for (let i = 0; i < accounts.length; i++) {
-        let tempNum = 0
-
+        let wealth = 0
         for (let j = 0; j < accounts[i].length; j++) {
-             tempNum += accounts[i][j];
+             wealth += accounts[i][j];
         }
-        tempArr.push(tempNum)
+        if (wealth > maxWealth) {
+            maxWealth = wealth
+        }
    }  
-     
-   tempArr.sort((a,b) => b - a)
-   return tempArr[0]
+   return maxWealth
 };
 // Test-Cases
 // maximumWealth([[2,8,7],[7,1,3],[1,9,5]])
